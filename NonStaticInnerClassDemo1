@@ -1,0 +1,30 @@
+class Outer
+{
+private int a=10;
+static int b=20;
+class NsInnerClass{
+void display()
+{
+System.out.println("Non-static inner class");
+System.out.println("Private variable a=:"+a);
+System.out.println("Static variable b=:"+b);
+}
+}
+static class StaticInnerClass{
+void show(){
+System.out.println("Static inner class");
+//System.out.println("Static variable  a="+a);
+System.out.println("Static varibale b="+b);
+}
+}
+}
+public class NonStaticInnerClassDemo1{
+public static void main(String[] args)
+{
+Outer o=new Outer();
+Outer.NsInnerClass n=o.new NsInnerClass();//Non-static inner class
+n.display();
+Outer.StaticInnerClass s=new Outer.StaticInnerClass();//static inner class
+s.show();
+}
+}
